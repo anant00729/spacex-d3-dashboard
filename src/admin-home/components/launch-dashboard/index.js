@@ -6,6 +6,7 @@ import {
   DashboardCountWrapper,
   CountCard,
   CountLabel,
+  LaunchStatusLabel,
 } from "./styles";
 
 function LaunchDashboard() {
@@ -40,15 +41,15 @@ function LaunchDashboard() {
       <DashboardCountWrapper>
         <CountCard>
           <CountLabel>{allLaunches.upcomingLaunches}</CountLabel>
-          <label>Upcoming Launches</label>
+          <LaunchStatusLabel>Upcoming Launches</LaunchStatusLabel>
         </CountCard>
         <CountCard>
           <CountLabel>{allLaunches.pastLaunches}</CountLabel>
-          <label>Past Launches</label>
+          <LaunchStatusLabel>Past Launches</LaunchStatusLabel>
         </CountCard>
         <CountCard>
           <CountLabel>{allLaunches.totalLaunches}</CountLabel>
-          <label>Total Launches</label>
+          <LaunchStatusLabel>Total Launches</LaunchStatusLabel>
         </CountCard>
       </DashboardCountWrapper>
     </LaunchDashboardWrapper>

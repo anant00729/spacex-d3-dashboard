@@ -37,3 +37,7 @@ export const CountLabel = styled.label`
   font-size: 32px;
   margin-bottom: 8px;
 `;
+
+export const LaunchStatusLabel = styled.label`
+  text-align: center;
+`;

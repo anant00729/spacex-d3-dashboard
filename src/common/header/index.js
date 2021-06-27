@@ -16,17 +16,12 @@ const ProfileImg =
 function Header() {
   return (
     <HeaderWrapper>
-      {/* App Name */}
       <AppName src={AppIcon} alt="app-icon" />
       <AppTitle>Space X</AppTitle>
-      {/* Profile pic */}
-
-      <ProfilePic src={ProfileImg} alt="app-icon" />
-      {/* Username */}
+      <ProfilePic src={ProfileImg} alt="profile-icon" />
       <UserName>
         <label>Karnadeep Rana</label>
       </UserName>
-      {/* Hamberger Menu */}
       <HambergerMenu src={MenuIcon} alt="menu-icon" />
     </HeaderWrapper>
   );

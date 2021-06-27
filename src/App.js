@@ -7,11 +7,8 @@ import { AppWrapper } from "./styles";
 function App() {
   return (
     <AppWrapper>
-      {/* Header */}
       <Header />
-      {/* Sidebar */}
       <SideBar />
-      {/* Home Main Body */}
       <AdminHome />
     </AppWrapper>
   );

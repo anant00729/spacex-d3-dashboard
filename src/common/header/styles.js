@@ -34,13 +34,17 @@ export const ProfilePic = styled.img`
 
 export const UserName = styled.div`
   /* border: 10px solid blue; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 10px;
-  height: 50px;
-  color: white;
-  font-weight: 600;
+  display: none;
+
+  @media (min-width: 974px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    height: 50px;
+    color: white;
+    font-weight: 600;
+  }
 `;
 
 export const HambergerMenu = styled.img`

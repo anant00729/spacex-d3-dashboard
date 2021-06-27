@@ -8,5 +8,10 @@ export const MapsWrapper = styled.div`
 
   svg {
     height: 230px;
+    width: 400px;
+
+    @media (min-width: 974px) {
+      width: 370px;
+    }
   }
 `;
