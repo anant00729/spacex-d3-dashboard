@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const AppWrapper = styled.div`
   display: grid;
-  background-color: green;
+  background-color: white;
   width: 100vw;
   min-height: 100vh;
   grid-template-columns: repeat(8, 1fr);

@@ -16,7 +16,7 @@ const colorScale = scaleQuantize()
     "#e2492d",
     "#be3d26",
     "#9a311f",
-    "#fff",
+    "#3898d4",
   ]);
 
 const MapChart = () => {
