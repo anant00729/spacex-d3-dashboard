@@ -1,8 +1,16 @@
 import React from "react";
-import { SideBarWrapper } from "./styles";
+import { SideBarWrapper, SidebarItem, MenuIcon } from "./styles";
+import HomeIcon from "../../images/home.png";
 
 function SideBar() {
-  return <SideBarWrapper>This is sidebar</SideBarWrapper>;
+  return (
+    <SideBarWrapper>
+      <SidebarItem>
+        <MenuIcon src={HomeIcon} alt="home-sidebar" />
+        <label>Home</label>
+      </SidebarItem>
+    </SideBarWrapper>
+  );
 }
 
 export default SideBar;

@@ -11,7 +11,7 @@ import MenuIcon from "../../images/menu.png";
 
 import AppIcon from "../../../src/images/appIcon.png";
 const ProfileImg =
-  "https://media-exp3.licdn.com/dms/image/C4D03AQFJh-12glcz4w/profile-displayphoto-shrink_800_800/0/1517229556085?e=1630540800&v=beta&t=bW2YePek9244VkHl2cTQe1Q1SdRbC2tr8oWzQMMxFLk";
+  "https://scontent.fbom12-1.fna.fbcdn.net/v/t1.6435-9/29103539_1296943310449981_4247130534372704256_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=174925&_nc_eui2=AeFG08RztulgpwgWVCJWWK4MHnvMfhkPqpkee8x-GQ-qmWvtUZ-yLuv3geubSqvkGQQ&_nc_ohc=zrKVKkivkwIAX9lbhCB&_nc_ht=scontent.fbom12-1.fna&oh=913c2e013f55a96b009c27c1c7acbd8a&oe=60DE5BEA";
 
 function Header() {
   return (
@@ -24,7 +24,7 @@ function Header() {
       <ProfilePic src={ProfileImg} alt="app-icon" />
       {/* Username */}
       <UserName>
-        <label>Anant S Awasthy</label>
+        <label>Karnadeep Rana</label>
       </UserName>
       {/* Hamberger Menu */}
       <HambergerMenu src={MenuIcon} alt="menu-icon" />

@@ -1,26 +1,34 @@
 import React, { useEffect, useState } from "react";
-import { LaunchTimelineWrapper } from "./styles";
+import {
+  LaunchTimelineWrapper,
+  TimeLineItem,
+  LaunchStatusIcon,
+  MissionNameLabel,
+} from "./styles";
+import DoneIcon from "../../../images/done.png";
+import UpcomingIcon from "../../../images/upcoming.png";
 
 function LaunchTimeline() {
-  const [data, setData] = useState([]);
+  const [launches, setLaunches] = useState([]);
   useEffect(() => {
-    let someData = [];
-    for (let i = 0; i < 100; ++i) {
-      someData.push(i);
-    }
-    setData(someData);
     fetch("https://api.spacexdata.com/v3/launches")
       .then((response) => response.json())
       .then((data) => {
-        console.log(`data`, data);
-        // formatMapData(data);
+        setLaunches(data.reverse());
       });
   }, []);
   return (
     <LaunchTimelineWrapper>
       <div>
-        {data.map((d, i) => (
-          <div key={i}>{d}</div>
+        {launches.map((d, i) => (
+          <TimeLineItem key={i}>
+            <LaunchStatusIcon
+              upcoming={d.upcoming}
+              src={d.upcoming ? UpcomingIcon : DoneIcon}
+              alt={`launch-img-${i}`}
+            />
+            <MissionNameLabel>{d.mission_name}</MissionNameLabel>
+          </TimeLineItem>
         ))}
       </div>
     </LaunchTimelineWrapper>

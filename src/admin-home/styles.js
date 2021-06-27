@@ -6,6 +6,7 @@ export const AdminHomeWrapper = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  background-color: #f0f9ff;
 `;
 
 export const PageTitleWrapper = styled.div`
@@ -18,14 +19,13 @@ export const PageTitle = styled.label`
 
 export const AnalysisWrapper = styled.div`
   display: grid;
-  border: 10px solid purple;
+  /* border: 10px solid purple; */
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 250px);
   flex: 1;
 
   @media (min-width: 974px) {
-    border: 10px solid purple;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: calc(100vh - 405px);
+    grid-template-rows: calc(100vh - 326px);
   }
 `;

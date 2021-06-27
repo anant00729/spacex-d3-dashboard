@@ -92,7 +92,7 @@ export default class D3Chart {
       .append("rect")
       .attr("x", (d) => x(d.launch_year))
       .attr("width", x.bandwidth)
-      .attr("fill", "blue")
+      .attr("fill", "#3898d4")
       .attr("y", HEIGHT)
       .transition()
       .duration(500)
