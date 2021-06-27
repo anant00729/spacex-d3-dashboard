@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const LaunchDashboardWrapper = styled.div`
-  border: 10px solid brown;
+  /* border: 10px solid brown; */
 `;
 
 export const PageTitleWrapper = styled.div`
@@ -21,7 +21,13 @@ export const DashboardCountWrapper = styled.div`
 `;
 
 export const UpcomingCountCard = styled.div`
-  border: 10px solid red;
+  /* border: 10px solid red; */
+  box-shadow: var(
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06),
+      0 0 #0000
+    ),
+    0 0 #0000, 0 0 #0000;
 `;
 
 export const PastCountCard = styled.div`

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const AdminHomeWrapper = styled.div`
   grid-area: main-body;
-  border: 10px solid tomato;
+  /* border: 10px solid tomato; */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
