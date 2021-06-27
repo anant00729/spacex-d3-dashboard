@@ -7,11 +7,6 @@ export default class D3Chart {
   constructor(element, chartData) {
     const self = this;
 
-    // const urls = [
-    //   d3.json("https://udemy-react-d3.firebaseio.com/tallest_men.json"),
-    //   d3.json("https://udemy-react-d3.firebaseio.com/tallest_women.json"),
-    // ];
-
     self.svg = d3
       .select(element)
       .append("svg")
