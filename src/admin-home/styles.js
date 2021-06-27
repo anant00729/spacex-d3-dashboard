@@ -19,7 +19,13 @@ export const PageTitle = styled.label`
 export const AnalysisWrapper = styled.div`
   display: grid;
   border: 10px solid purple;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 250px);
   flex: 1;
+
+  @media (min-width: 974px) {
+    border: 10px solid purple;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: calc(100vh - 405px);
+  }
 `;

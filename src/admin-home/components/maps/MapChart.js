@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import { scaleQuantize } from "d3-scale";
-import { csv } from "d3-fetch";
+import { MapsWrapper } from "./styles";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3.0.0/states-10m.json";
 
@@ -58,17 +58,12 @@ const MapChart = () => {
   }, []);
 
   return (
-    <>
+    <MapsWrapper>
       <ComposableMap projection="geoAlbersUsa">
         <Geographies geography={geoUrl}>
           {({ geographies }) =>
             geographies.map((geo) => {
               const cur = data.find((s) => s.region === geo.properties.name);
-
-              console.log(
-                `colorScale(cur ? cur.count : "white")`,
-                colorScale(cur ? cur.count : "white")
-              );
               return (
                 <Geography
                   key={geo.rsmKey}
@@ -80,7 +75,7 @@ const MapChart = () => {
           }
         </Geographies>
       </ComposableMap>
-    </>
+    </MapsWrapper>
   );
 };
 
