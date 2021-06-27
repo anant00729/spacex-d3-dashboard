@@ -1,16 +1,16 @@
 import * as d3 from "d3";
-const MARGIN = { TOP: 10, BOTTOM: 50, LEFT: 70, RIGHT: 10 };
-const WIDTH = 500 - MARGIN.LEFT - MARGIN.RIGHT;
-const HEIGHT = 300 - MARGIN.TOP - MARGIN.BOTTOM;
+const MARGIN = { TOP: 60, BOTTOM: 60, LEFT: 40, RIGHT: 10 };
+const WIDTH = 400 - MARGIN.LEFT - MARGIN.RIGHT;
+const HEIGHT = 250 - MARGIN.TOP - MARGIN.BOTTOM;
 
 export default class D3Chart {
-  constructor(element) {
+  constructor(element, chartData) {
     const self = this;
 
-    const urls = [
-      d3.json("https://udemy-react-d3.firebaseio.com/tallest_men.json"),
-      d3.json("https://udemy-react-d3.firebaseio.com/tallest_women.json"),
-    ];
+    // const urls = [
+    //   d3.json("https://udemy-react-d3.firebaseio.com/tallest_men.json"),
+    //   d3.json("https://udemy-react-d3.firebaseio.com/tallest_women.json"),
+    // ];
 
     self.svg = d3
       .select(element)
@@ -23,15 +23,15 @@ export default class D3Chart {
     self.xLabel = self.svg
       .append("text")
       .attr("x", WIDTH / 2)
-      .attr("y", HEIGHT + 50)
+      .attr("y", HEIGHT + 40)
       .attr("text-anchor", "middle");
 
     self.svg
       .append("text")
       .attr("x", -HEIGHT / 2)
-      .attr("y", -50)
+      .attr("y", -25)
       .attr("text-anchor", "middle")
-      .text("Height in cm")
+      .text("Number of launches")
       .attr("transform", `rotate(-90)`);
 
     self.xAxisGroup = self.svg
@@ -39,33 +39,30 @@ export default class D3Chart {
       .attr("transform", `translate(0, ${HEIGHT})`);
 
     self.yAxisGroup = self.svg.append("g");
-
-    Promise.all(urls).then((datasets) => {
-      self.menData = datasets[0];
-      self.womenData = datasets[1];
-      self.update("men");
-    });
+    self.update(chartData);
   }
 
-  update(gender) {
-    let { data, svg, xAxisGroup, yAxisGroup, menData, womenData } = this;
-    data = gender === "men" ? menData : womenData;
+  update(chartData) {
+    let { data, svg, xAxisGroup, yAxisGroup } = this;
+    data = chartData;
 
-    this.xLabel.text(`The world's tallest ${gender}`);
+    console.log(`data`, data);
+    this.xLabel.text(`Lauch years`);
 
     const y = d3
       .scaleLinear()
       .domain([
-        d3.min(data, (d) => d.height) * 0.95,
-        d3.max(data, (d) => d.height),
+        // d3.min(data, (d) => d.count) * 0.95,
+        0,
+        d3.max(data, (d) => d.count),
       ])
       .range([HEIGHT, 0]);
 
     const x = d3
       .scaleBand()
-      .domain(data.map((d) => d.name))
+      .domain(data.map((d) => d.launch_year))
       .range([0, WIDTH])
-      .padding(0.4);
+      .padding(0.6);
 
     const xAxisCall = d3.axisBottom(x);
     xAxisGroup.transition().duration(500).call(xAxisCall);
@@ -89,22 +86,22 @@ export default class D3Chart {
     rects
       .transition()
       .duration(500)
-      .attr("x", (d) => x(d.name))
-      .attr("y", (d) => y(d.height))
+      .attr("x", (d) => x(d.launch_year))
+      .attr("y", (d) => y(d.count))
       .attr("width", x.bandwidth)
-      .attr("height", (d, i) => HEIGHT - y(d.height));
+      .attr("height", (d, i) => HEIGHT - y(d.count));
 
     // ENTER
     rects
       .enter()
       .append("rect")
-      .attr("x", (d) => x(d.name))
+      .attr("x", (d) => x(d.launch_year))
       .attr("width", x.bandwidth)
       .attr("fill", "blue")
       .attr("y", HEIGHT)
       .transition()
       .duration(500)
-      .attr("height", (d, i) => HEIGHT - y(d.height))
-      .attr("y", (d) => y(d.height));
+      .attr("height", (d, i) => HEIGHT - y(d.count))
+      .attr("y", (d) => y(d.count));
   }
 }

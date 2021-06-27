@@ -5,9 +5,9 @@ export const AppWrapper = styled.div`
   background-color: green;
   width: 100vw;
   min-height: 100vh;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   grid-template-rows: 90px 1fr;
   grid-template-areas:
-    "header header header header header"
-    "sidebar main-body main-body main-body main-body";
+    "header header header header header header header header"
+    "sidebar main-body main-body main-body main-body main-body main-body main-body";
 `;

@@ -1,8 +1,14 @@
 import React from "react";
 import { MapsWrapper } from "./styles";
+import MapChart from "./MapChart";
 
 function Maps() {
-  return <MapsWrapper>Here is the Maps</MapsWrapper>;
+  return (
+    <MapsWrapper>
+      {/* <ChartWrapper gender={"women"} /> */}
+      <MapChart />
+    </MapsWrapper>
+  );
 }
 
 export default Maps;
