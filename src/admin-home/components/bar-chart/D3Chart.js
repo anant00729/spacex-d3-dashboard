@@ -1,5 +1,5 @@
 import * as d3 from "d3";
-const MARGIN = { TOP: 60, BOTTOM: 60, LEFT: 40, RIGHT: 10 };
+const MARGIN = { TOP: 60, BOTTOM: 60, LEFT: 50, RIGHT: 10 };
 const WIDTH = 400 - MARGIN.LEFT - MARGIN.RIGHT;
 const HEIGHT = 250 - MARGIN.TOP - MARGIN.BOTTOM;
 
@@ -24,7 +24,7 @@ export default class D3Chart {
     self.svg
       .append("text")
       .attr("x", -HEIGHT / 2)
-      .attr("y", -25)
+      .attr("y", -35)
       .attr("text-anchor", "middle")
       .text("Number of launches")
       .attr("transform", `rotate(-90)`);
@@ -42,7 +42,7 @@ export default class D3Chart {
     data = chartData;
 
     console.log(`data`, data);
-    this.xLabel.text(`Lauch years`);
+    this.xLabel.text(`Launch years`);
 
     const y = d3
       .scaleLinear()

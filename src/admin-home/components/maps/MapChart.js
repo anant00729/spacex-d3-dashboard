@@ -75,6 +75,7 @@ const MapChart = () => {
           }
         </Geographies>
       </ComposableMap>
+      <h4>Launch Sites</h4>
     </MapsWrapper>
   );
 };
